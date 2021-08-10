@@ -23,5 +23,7 @@
     ({ lib, ... }:
       { packages = {}; })
     { packages = { "$everything" = { ghcOptions = [ "-haddock" ]; }; }; }
+    ({ lib, ... }:
+      { planned = lib.mkOverride 900 true; })
     ];
   }

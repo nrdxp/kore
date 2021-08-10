@@ -1,4 +1,5 @@
 { profiling ? false
+, system ? builtins.currentSystem
 , release ? false
 , threaded ? !profiling
 , checkMaterialization ? false
@@ -18,16 +19,16 @@
 }:
 
 let
-  sources = import ./nix/sources.nix;
-  haskell-nix = import sources."haskell.nix" {};
+  sources = import ./nix/sources.nix { inherit system; };
+  haskell-nix = import sources."haskell.nix" { inherit system; };
   inherit (haskell-nix) pkgs;
   inherit (pkgs) lib;
 
   ttuegel =
     let
       src = builtins.fetchGit {
-        url = "https://github.com/ttuegel/nix-lib";
-        rev = "66bb0ab890ff4d828a2dcfc7d5968465d0c7084f";
+        url = "https://github.com/kreisys/nix-lib";
+        rev = "e62c580ac0d2e8133bb2f3326c312ac86d348277";
         ref = "main";
       };
     in import src { inherit pkgs; };
@@ -71,7 +72,7 @@ let
 
   shell = import ./shell.nix { inherit default checkMaterialization; };
 
-  version = project.kore.components.exes.kore-exec.version;
+  version = builtins.trace (builtins.attrNames project.kore.components.exes) project.kore.components.exes.kore-exec.version;
   # version = "0.43.0.0";
 
   prelude-kore = ./src/main/kore/prelude.kore;

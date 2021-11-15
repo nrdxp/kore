@@ -12,15 +12,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
-        "branch": "preflake",
+        "branch": "master",
         "description": "Alternative Haskell Infrastructure for Nixpkgs",
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "3b3104119b306eff62f183b92725e190fb0b43e4",
-        "sha256": "1jl10lqkpzjyrk4k8qnmpl1lmk4j68998a64ca9sqnlr5ns22sba",
+        "rev": "3eb7e1199b07144bb8e69615b27c691c26f2fbc7",
+        "sha256": "09wyfn02aiygllzmqingkii7kfxzphsxshvc5f5q1nm96iay2sbv",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/haskell.nix/archive/3b3104119b306eff62f183b92725e190fb0b43e4.tar.gz",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/3eb7e1199b07144bb8e69615b27c691c26f2fbc7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "version": "05f99684cb3b86703e910da6be1e619447788c7b"
     },
@@ -71,18 +71,6 @@
         "sha256": "02fb8x5g7kc8rklb6d937xglrhkj5y6f0vlvpzalqhhfcyxp1l3q",
         "type": "tarball",
         "url": "https://github.com/shajra/nix-haskell-hls/archive/7f5dad7d3569467cd7f41429566e59f0cbf1dc40.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "nixpkgs": {
-        "branch": "master",
-        "description": "Nix Packages collection",
-        "homepage": "",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "fc37cc679f168159a234f45a3861b1b7a414e304",
-        "sha256": "0a57rmfn332dnwk6smlcarp3m7gvifq9y872cmcxj1800fjnjnns",
-        "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs/archive/fc37cc679f168159a234f45a3861b1b7a414e304.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

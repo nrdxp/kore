@@ -7,7 +7,8 @@ let
   inherit (project) shellFor;
 
   sources = import ./nix/sources.nix;
-  pkgs = import sources."nixpkgs" {};
+  haskell-nix = import sources."haskell.nix" {};
+  pkgs = import haskell-nix.sources.nixpkgs-unstable haskell-nix.nixpkgsArgs;
 
   inherit (pkgs) cabal-install ghcid stack;
   inherit (pkgs) fd gnumake yq z3;

@@ -20,8 +20,8 @@
 
 let
   sources = import ./nix/sources.nix { inherit system; };
-  haskell-nix = import sources."haskell.nix" { inherit system; };
-  pkgs = import haskell-nix.sources.nixpkgs-unstable haskell-nix.nixpkgsArgs;
+  haskell-nix = import sources."haskell.nix" { inherit (import sources.nixpkgs { inherit system; }) pkgs; };
+  pkgs = import haskell-nix.sources.nixpkgs-unstable ({ inherit system; } // haskell-nix.nixpkgsArgs);
   inherit (pkgs) lib;
 
   ttuegel =
